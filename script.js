@@ -1,31 +1,32 @@
-document.getElementById('generate').addEventListener('click', generatePassword);
-document.getElementById('regenerate').addEventListener('click', generatePassword);
-
-function generatePassword() {
-  const length = document.getElementById('length').value;
-  const includeSymbols = document.getElementById('symbols').checked;
-  const includeLetters = document.getElementById('letters').checked;
-  const includeNumbers = document.getElementById('numbers').checked;
-
-  let characters = '';
-  let password = '';
-
-  if (includeSymbols) {
+document.getElementById('generate').addEventListener('click', function() {
+  var length = document.getElementById('length').value;
+  var symbols = document.getElementById('symbols').checked;
+  var numbers = document.getElementById('numbers').checked;
+  var lowercase = document.getElementById('lowercase').checked;
+  var uppercase = document.getElementById('uppercase').checked;
+  
+  var characters = '';
+  var password = '';
+  
+  if (symbols) {
     characters += '!@#$%^&*()';
   }
-
-  if (includeLetters) {
-    characters += 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  }
-
-  if (includeNumbers) {
+  
+  if (numbers) {
     characters += '0123456789';
   }
-
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * characters.length);
-    password += characters[randomIndex];
+  
+  if (lowercase) {
+    characters += 'abcdefghijklmnopqrstuvwxyz';
   }
-
-  document.getElementById('password').value = password;
-}
+  
+  if (uppercase) {
+    characters += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  }
+  
+  for (var i = 0; i < length; i++) {
+    password += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  
+  document.getElementById('password').textContent = password;
+});
