@@ -4,36 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Generador de Contraseñas Fuertes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Generador de Contraseñas Fuertes</h1>
-  
-  <label for="length">Longitud de la Contraseña:</label>
-  <input type="number" id="length" min="1" max="30">
-  
-  <label for="symbols">Incluir Símbolos:</label>
-  <input type="checkbox" id="symbols">
-  
-  <label for="numbers">Incluir Números:</label>
-  <input type="checkbox" id="numbers">
-  
-  <label for="lowercase">Incluir Minúsculas:</label>
-  <input type="checkbox" id="lowercase">
-  
-  <label for="uppercase">Incluir Mayúsculas:</label>
-  <input type="checkbox" id="uppercase">
-  
-  <button id="generate">Generar Contraseña</button>
-  
-  <div id="password"></div>
-  
+  <main class="card">
+    <h1>Generador de Contraseñas Fuertes</h1>
+
+    <div class="form-control">
+      <label for="length">Longitud de la Contraseña</label>
+      <input type="number" id="length" min="1" max="30" value="12">
+    </div>
+
+    <div class="form-control">
+      <label><input type="checkbox" id="symbols"> Incluir Símbolos</label>
+    </div>
+
+    <div class="form-control">
+      <label><input type="checkbox" id="numbers"> Incluir Números</label>
+    </div>
+
+    <div class="form-control">
+      <label><input type="checkbox" id="lowercase"> Incluir Minúsculas</label>
+    </div>
+
+    <div class="form-control">
+      <label><input type="checkbox" id="uppercase"> Incluir Mayúsculas</label>
+    </div>
+
+    <button id="generate" class="btn">Generar Contraseña</button>
+
+    <div class="result">
+      <input type="text" id="password" readonly>
+      <button id="copy" class="btn secondary">Copiar</button>
+    </div>
+  </main>
+
   <script src="script.js"></script>
-</body>
   <footer>
-  <div class="footer-content">
-    <a href="https://daniwth.me">daniwth.me</a>
-    <a href="https://daniwth.me/license">License</a>
-  </div>
-</footer>
+    <div class="footer-content">
+      <a href="https://daniwth.me">daniwth.me</a>
+      <a href="https://daniwth.me/license">License</a>
+    </div>
+  </footer>
+</body>
 </html>
